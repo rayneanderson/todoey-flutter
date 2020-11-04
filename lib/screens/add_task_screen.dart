@@ -15,7 +15,7 @@ class AddTaskScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.0),
+            topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
           ),
         ),
@@ -27,12 +27,18 @@ class AddTaskScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 30.0,
-                color: Colors.lightBlueAccent,
+                color: Colors.deepPurple,
               ),
             ),
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              cursorColor: Colors.deepPurple,
+              decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.deepPurple),
+                ),
+              ),
               onChanged: (newText) {
                 newTaskTitle = newText;
               },
@@ -44,7 +50,7 @@ class AddTaskScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              color: Colors.lightBlueAccent,
+              color: Colors.deepPurple,
               onPressed: () {
                 Provider.of<TaskData>(context).addTask(newTaskTitle);
                 Navigator.pop(context);
